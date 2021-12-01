@@ -1,0 +1,503 @@
+* {
+    box-sizing: border-box;
+}
+
+/****** Colors & Themes ******/
+
+:root {
+    --darkBlue : #02111d;
+    --mediumBlue : #043860;
+    --darkGrey : #001C18;
+}
+
+/* Main color */ 
+
+.color-blue {
+    --primary : #4DFBE9;
+}
+
+.color-pink {
+    --primary : #FF9AA2;
+}
+
+.color-orange {
+    --primary : #ff8929;
+}
+
+.color-green {
+    --primary : #26ff00;
+}
+
+/* brick themes */
+
+.neon-theme {
+    --ishape : #39EDFC; 
+    --jshape : #011EFE; 
+    --lshape : #FF9A00; 
+    --oshape : #FDFE02; 
+    --sshape : #00FFA1; 
+    --tshape : #FC01FF; 
+    --zshape : #FE0000; 
+}
+
+.monochrome-theme {
+    --ishape : var(--primary);
+    --lshape : var(--primary);
+    --jshape : var(--primary);
+    --oshape : var(--primary);
+    --tshape : var(--primary);
+    --sshape : var(--primary);
+    --zshape : var(--primary);
+}
+
+.pastel-theme {
+    --ishape : #FF9AA2;
+    --jshape : #FFB7B2;
+    --lshape : #FFDAC1;
+    --oshape : #E2F0CB;
+    --sshape : #B5EAD7;
+    --tshape : #C7CEEA;
+    --zshape : #9AB7D3;
+}
+
+.sepia-theme {
+    --ishape : #ECBE78;
+    --jshape : #DBA766;
+    --lshape : #D69056;
+    --oshape : #C97F4D;
+    --sshape : #B86A3F;
+    --tshape : #9E4F28;
+    --zshape : #783411;
+}
+
+.Ishape {
+    background-color: var(--ishape);
+}
+
+.Jshape {
+    background-color: var(--jshape);
+}
+
+.Lshape {
+    background-color: var(--lshape);
+}
+
+.Oshape {
+    background-color : var(--oshape);
+}
+
+.Sshape {
+    background-color: var(--sshape);
+}
+
+.Tshape {
+    background-color: var(--tshape);
+}
+
+.Zshape {
+    background-color : var(--zshape);
+}
+
+
+
+/****** All ******/
+
+body {
+    margin: 0;
+    background-image: linear-gradient(to bottom right, rgb(41, 41, 41), rgb(37, 37, 37), rgb(34, 34, 34), rgb(30, 30, 30), rgb(26, 26, 26), rgb(22, 22, 22), rgb(19, 19, 19), rgb(15, 15, 15), rgb(11, 11, 11), rgb(7, 7, 7), rgb(4, 4, 4), rgb(0, 0, 0));
+    font-family : 'Audiowide', cursive;
+    min-height: 100vh;
+    display: flex;
+}
+
+main {
+    position: relative;
+    display: flex;
+    height: 100vmin;
+    min-height: 525px;
+    width: 100vmin;
+    padding: 10px;
+    margin : auto;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--darkGrey);
+    border-radius: 10px;
+    border : solid 2px var(--primary);
+}
+
+h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    text-transform: uppercase;    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.hold-container, .preview-container, .info {
+    border: solid 1.5px var(--primary);
+    padding: 15px;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.controls button, .gameover button, .startscreen button, .modal-settings button {
+    width: 100%;
+    text-transform: uppercase;
+    background-color: var(--darkBlue);
+    border: solid 1.5px var(--primary);
+    color: var(--primary);
+    padding: 10px 0;
+    margin-top: 10px;
+    border-radius: 7px;
+    font-family : 'Audiowide', cursive;
+    font-size: 0.8rem; 
+}
+
+.controls button:hover, .gameover button:hover, .startscreen button:hover, .modal-settings button:hover{
+    background-color: var(--primary);
+    color: var(--darkBlue);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Aside left */
+
+aside {
+    width: 100px;
+    height: 95%;
+    max-height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hold {
+    width: 80px;
+    height: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--darkBlue);
+}
+
+.hold div {
+    border: solid rgba(255,255,255,0.2) 1px;
+    width: 20px;
+    height: 20px;
+}
+
+.info p {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    border-radius: 2px;
+    color: white;
+    border: solid rgba(255,255,255,0.6) 0.5px;
+    background-color: var(--darkBlue);
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+/* Game Grid */
+.grid-container {
+    position: relative;
+    height: 75%;
+    width: 40%;
+    margin: 0 30px;
+}
+
+.grid {
+    border-radius: 5px;    
+    padding: 10px;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--darkBlue);
+    transform: scale(1.3);
+}
+
+.grid div {
+    width : calc(100% / 10);
+    height: calc(100% / 20);
+    border: solid rgba(255,255,255,0.2) 0.5px;
+}
+
+/* Aside Right */
+
+.preview {
+    width: 80px;
+    height: 220px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--darkBlue);
+}
+
+.preview div {
+    border: solid rgba(255,255,255,0.2) 0.5px;
+    width: 20px;
+    height: 20px;
+}
+
+.playpause {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.playpause button {
+    margin : auto;
+    display: block;
+    width: 80%;
+    border-radius: 10px;
+    padding: 10px;
+    background-color : var(--darkBlue);
+    color: var(--primary);
+    border: solid 2px var(--primary);
+}
+
+.playpause button:hover{
+    background-color: var(--primary);
+    color: var(--darkBlue);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.playpause h2 {
+    margin:0;
+    margin-top: 10px;
+}
+
+/* Modals */
+
+.modal-content {
+    display : none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--darkGrey);
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.modal-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    color: var(--primary);
+    border-bottom: solid;
+}
+
+.modal-nav h2 {
+    margin: 0;
+}
+
+.modal-nav span {
+    font-size: 1.5rem;
+}
+
+.modal-nav span:hover {
+    cursor: pointer;
+}
+
+.modal-controls, .modal-settings {
+    padding: 40px;
+}
+
+/* Modal Controls */
+
+.modal-controls .row{
+    display: flex;
+    align-items: center;
+}
+
+.modal-controls .icon {
+    min-width: 80px;
+    text-align: center;
+}
+
+.modal-controls svg {
+    color : var(--primary);
+    transform: scale(1.8);
+}
+
+.modal-controls .spacebar {
+    height: 20px;
+    width: 80px;
+    background-color: var(--primary);
+}
+
+.modal-controls p {
+    color: white;
+    font-size: 1.2rem;
+    margin-left: 50px;
+}
+
+/* Modal settings */
+
+.modal-settings .row {
+    width: 80%;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    min-height: 80px;
+    align-items: center;
+}
+
+.modal-settings label {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.modal-settings input[type='radio']{
+    position: absolute;
+    opacity:0;
+}
+
+.modal-settings input[type='radio'] +label:hover{
+    cursor: pointer;
+}
+
+.modal-settings input[name='color'] + label {
+    background-color: var(--primary);
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    border-radius: 100px;
+    position: relative;
+}
+
+.modal-settings input[name='color']:checked + label {
+    border: solid white 2px;
+}
+
+.modal-settings input[name='color']:checked + label::after {
+    content:"\2713";
+    font-size: 1.5rem;
+    font-weight: 900;
+    display: block;
+    margin: 0;
+    text-align: center;
+    line-height: 150%;
+    position: absolute;
+    top:0;
+    left: 8px;
+}
+
+.modal-settings select {
+    background-color: transparent;
+    color: var(--primary);
+    border: solid 1.5px var(--primary);
+    border-radius: 5px;
+    font-size: 1rem;
+    padding : 5px;
+    font-weight: 600;
+}
+
+.modal-settings input[name='music'] + label, .modal-settings input[name='soundeffects'] + label {
+    color: var(--primary);
+    border : solid 1.5px var(--primary);
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 100px;
+    position: relative;
+    font-size: 1rem;
+    margin-left: 10px;
+}
+
+.modal-settings input[name='music']:checked + label, .modal-settings input[name='soundeffects']:checked + label {
+    color : white;
+    border-color: var(--primary);
+    background-color : var(--primary);
+}
+
+.modal-settings button {
+    width: 30%;
+    margin: auto;
+    display: block;
+    margin-top: 50px;
+}
+
+/* Start, Pause && Game Over */
+
+.gameover, .startscreen, .pausescreen {
+    position: absolute;
+    top: 0;
+    transform : scale(1.3);
+    height: 100%;
+    width: 100%;
+    background-color: rgba(2, 17, 29,0.6);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gameover, .pausescreen {
+    display: none;
+}
+
+.startscreen {
+    display: flex;
+}
+
+.gameover h1, .startscreen h1, .pausescreen h1 {
+    color: var(--primary);
+    margin :0;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.startscreen h1 {
+    text-transform: uppercase;
+}
+
+.pausescreen h1 {
+    font-size: 1rem;
+    letter-spacing: 0.3rem;
+}
+
+.gameover button, .startscreen button  {
+    width: 80%;
+}
+
+
+/****** Animation ******/
+
+.linebreak {
+    animation : linetilt 500ms;
+}
+
+@keyframes linetilt {
+    0% {
+        background-color: white;
+    }
+    25%{
+        background-color : var(--darkGrey);
+    }
+    50% {
+        background-color: white;
+    }
+    75% {
+        background-color : var(--darkGrey);
+    }
+}
+
+/* Responsive */
+
+@media screen and (max-width: 525px){
+    aside:last-of-type{
+        display: none;
+    }
+
+    .modal-settings {
+        padding: 20px;
+    }
+
+    .modal-settings .row {
+        width: 100%;
+    }
+}
