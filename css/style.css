@@ -464,6 +464,9 @@ aside {
     width: 80%;
 }
 
+.mobile-warning {
+    display: none;
+}
 
 /****** Animation ******/
 
@@ -489,15 +492,28 @@ aside {
 /* Responsive */
 
 @media screen and (max-width: 525px){
-    aside:last-of-type{
-        display: none;
-    }
-
-    .modal-settings {
-        padding: 20px;
-    }
-
-    .modal-settings .row {
+    .mobile-warning {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
         width: 100%;
+        height: 100%;
+        color: white;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
+
+    .mobile-warning img {
+        width: 60%;
+        margin-bottom: 20px;
+    }
+    .mobile-warning span {
+        text-align: center;
+        max-width: 70%;   
+    }
+    
 }
